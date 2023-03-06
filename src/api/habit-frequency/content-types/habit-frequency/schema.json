@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "habit_frequencies",
+  "info": {
+    "singularName": "habit-frequency",
+    "pluralName": "habit-frequencies",
+    "displayName": "Habit_Frequency"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "habit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::habit.habit",
+      "inversedBy": "habit_frequency"
+    },
+    "frequency_type": {
+      "type": "enumeration",
+      "enum": [
+        "Daily",
+        "Weekly",
+        "SpecificDays",
+        "NumberOfTimesPerWeek"
+      ]
+    },
+    "specific_days": {
+      "type": "string"
+    },
+    "days_per_week": {
+      "type": "integer"
+    }
+  }
+}

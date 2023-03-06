@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_friends",
+  "info": {
+    "singularName": "user-friend",
+    "pluralName": "user-friends",
+    "displayName": "User_Friend",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "requester_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "reciever_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "accepted",
+        "blocked"
+      ]
+    }
+  }
+}

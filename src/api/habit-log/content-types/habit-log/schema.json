@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "habit_logs",
+  "info": {
+    "singularName": "habit-log",
+    "pluralName": "habit-logs",
+    "displayName": "Habit_Log",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "habit": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::habit.habit",
+      "inversedBy": "habit_logs"
+    },
+    "log_date": {
+      "type": "date"
+    },
+    "completion_status": {
+      "type": "enumeration",
+      "enum": [
+        "skipped",
+        "completed",
+        "failed"
+      ]
+    },
+    "note": {
+      "type": "text"
+    }
+  }
+}
